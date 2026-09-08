@@ -3,7 +3,6 @@ import { Job } from './types/job';
 import { renderJobCard } from './components/JobCard';
 import { renderPaymentModal } from './components/PaymentModal';
 import { getUserCoordinates, calculateDistance } from './utils/geo';
-
 let mockJobs: Job[] = [
   {
     id: '1',
@@ -37,7 +36,6 @@ function renderApp() {
     </main>
     <div id="modal-container"></div>
   `;
-
   document.getElementById('btn-geo')?.addEventListener('click', async () => {
     try {
       const userCoords = await getUserCoordinates();
