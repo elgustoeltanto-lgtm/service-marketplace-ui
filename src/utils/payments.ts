@@ -1,3 +1,4 @@
+import { PaymentBreakdown } from '../types/job';
 export function calculatePayout(amount: number, hasReferrer: boolean): PaymentBreakdown {
   const platformFee = amount * 0.01;
   const transferFee = amount * 0.01;
