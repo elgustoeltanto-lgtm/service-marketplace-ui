@@ -42,13 +42,11 @@ function renderApp() {
     try {
       const userCoords = await getUserCoordinates();
       
-      // Calculer la distance pour chaque job
       mockJobs = mockJobs.map(job => ({
         ...job,
         distance: calculateDistance(userCoords.lat, userCoords.lng, job.location.lat, job.location.lng)
       }));
 
-      // Trier du plus proche au plus éloigné
       mockJobs.sort((a, b) => (a.distance || 0) - (b.distance || 0));
 
       renderApp();
@@ -71,4 +69,3 @@ renderApp();
 (window as any).closePaymentModal = () => {
   document.getElementById('modal-container')!.innerHTML = '';
 };
- 
